@@ -1,1 +1,1 @@
-module.exports = require('./lib/campbot');
+module.exports = require('./lib/spook');

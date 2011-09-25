@@ -1,10 +1,10 @@
 Ranger = require("ranger")
 
-class Campbot
+class Spook
   apiKey: null
   subdomain: null
   roomID: null
-  handle: "(@campbot |campbot |CAMPBOT: |!)"
+  handle: "(@spook |spook |SPOOK: |!)"
   behaviors: null
   connection: null
   room: null
@@ -39,4 +39,4 @@ class Campbot
       if matches = message.body.match("#{@handle}#{behavior.trigger}")
         behavior.action.apply(this, matches[2...matches.length])
 
-module.exports = Campbot
+module.exports = Spook

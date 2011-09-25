@@ -1,4 +1,4 @@
-# Campbot
+# Spook
 
 A super simple node.js library for building Campfire bots.
 
@@ -6,14 +6,14 @@ A super simple node.js library for building Campfire bots.
 
 ### Coffeescript
 
-    Campbot = require('./path-to/campbot')
+    Spook = require('./path-to/spook')
 
-    campbot = new Campbot
+    spook = new Spook
       apiKey: 'api-key'
       subdomain: 'account-subdomain'
       roomID: 12345
 
-    campbot.respondTo ->
+    spook.respondTo ->
 
       @match 'ping', ->
         @say 'pong'
@@ -21,19 +21,19 @@ A super simple node.js library for building Campfire bots.
       @match 'echo (.+)', (message) ->
         @say message
 
-    campbot.connect()
+    spook.connect()
 
 ### Javascript
 
-    var Campbot = require('./path-to/campbot');
+    var Spook = require('./path-to/spook');
 
-    campbot = new Campbot({
+    spook = new Spook({
       apiKey: 'api-key',
       subdomain: 'account-subdomain',
       roomID: 12345
     });
 
-    campbot.respondTo(function() {
+    spook.respondTo(function() {
 
       this.match('ping', function() {
         this.say('pong');
@@ -44,4 +44,4 @@ A super simple node.js library for building Campfire bots.
       });
     });
 
-    campbot.connect();
+    spook.connect();
