@@ -24,6 +24,9 @@ class Spook
   say: (message) ->
     @room.speak(message)
 
+  paste: (message) ->
+    @room.paste(message)
+
   connect: ->
     @connection = Ranger.createClient(@subdomain, @apiKey)
     @connection.room @roomID, (room) =>
