@@ -1,4 +1,4 @@
-ranger = require("ranger")
+Ranger = require("ranger")
 
 class Campbot
   apiKey: null
@@ -25,7 +25,7 @@ class Campbot
     @room.speak(message)
    
   connect: ->
-    @connection = ranger.createClient(@subdomain, @apiKey)
+    @connection = Ranger.createClient(@subdomain, @apiKey)
     @connection.room @roomID, (room) =>
       @room = room
       @room.join =>
