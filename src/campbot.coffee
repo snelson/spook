@@ -4,7 +4,7 @@ class Campbot
   apiKey: null
   subdomain: null
   roomID: null
-  handle: "campbot"
+  handle: "(@campbot |campbot |CAMPBOT: |!)"
   behaviors: null
   connection: null
   room: null
