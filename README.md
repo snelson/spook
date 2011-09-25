@@ -1,0 +1,1 @@
+A super simple node.js library for building Campfire bots.
