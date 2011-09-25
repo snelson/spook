@@ -8,13 +8,13 @@ class Campbot
   behaviors: null
   connection: null
   room: null
-  
+
   constructor: (options) ->
     for k,v of options
       @[k] = v
-       
+
     @behaviors = []
-    
+
   respondTo: (behavior) ->
     behavior.apply(this)
 
@@ -23,7 +23,7 @@ class Campbot
 
   say: (message) ->
     @room.speak(message)
-   
+
   connect: ->
     @connection = Ranger.createClient(@subdomain, @apiKey)
     @connection.room @roomID, (room) =>
@@ -32,11 +32,11 @@ class Campbot
         @room.listen @_processMessage
 
   # private
-  
+
   _processMessage: (message) =>
     return if message.type != 'TextMessage'
     for behavior in @behaviors
       if matches = message.body.match("#{@handle}#{behavior.trigger}")
         behavior.action.apply(this, matches[2...matches.length])
-    
+
 module.exports = Campbot

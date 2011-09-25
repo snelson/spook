@@ -24,7 +24,7 @@ A super simple node.js library for building Campfire bots.
     campbot.connect()
 
 ### Javascript
-    
+
     var Campbot = require('./path-to/campbot');
 
     campbot = new Campbot({
