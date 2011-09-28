@@ -1,0 +1,3 @@
+[submodule "vendor/ranger"]
+	path = vendor/ranger
+	url = git://github.com/wadey/ranger.git

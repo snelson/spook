@@ -1,4 +1,4 @@
-Ranger = require("ranger")
+Ranger = require("../vendor/ranger")
 
 class Spook
   apiKey: null
@@ -29,14 +29,14 @@ class Spook
 
   connect: ->
     @connection = Ranger.createClient(@subdomain, @apiKey)
-    @connection.room @roomID, (room) =>
+    @connection.room @roomID, (err, room) =>
       @room = room
       @room.join =>
         @room.listen @_processMessage
 
   # private
 
-  _processMessage: (message) =>
+  _processMessage: (err, message) =>
     return if message.type != 'TextMessage'
     for behavior in @behaviors
       if matches = message.body.match("#{@handle}#{behavior.trigger}")
